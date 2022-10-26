@@ -1,0 +1,57 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    padding: 5px 0;
+    text-align: center;
+    margin: 0;
+}
+
+.parent {
+    display: flex;
+}
+
+.list {
+    flex: 3;
+}
+
+.form {
+    flex: 1;
+}
+
+.my-control {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.my-control label {
+    width: 110px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.my-control input,
+.my-control select,
+.my-control textarea {
+    flex-grow: 1;
+}
+
+.centered {
+    text-align: center;
+}
+.icon {
+    font-size: 35px;
+    color: black;
+    cursor: pointer;
+}
+
+.fas {
+    color: rgb(235, 235, 86);
+}
