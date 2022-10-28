@@ -29,17 +29,17 @@
       <i class="icon far fa-star" id="iImportant"></i>
       <div class="my-control">
         <label>Tittle</label>
-        <input type="text" />
+        <input type="text" id="txtTittle"/>
       </div>
 
       <div class="my-control">
         <label>Description</label>
-        <textarea rows="5"></textarea>
+        <textarea rows="5" id="txtDescription"></textarea>
       </div>
 
       <div class="my-control">
         <label>Priority</label>
-        <select>
+        <select id="selPriority">
           <option>Low</option>
           <option>Normal</option>
           <option>Medium</option>
@@ -50,22 +50,22 @@
 
       <div class="my-control">
         <label>Due Date</label>
-        <input type="datetime-local" />
+        <input type="datetime-local" id="selDueDate"/>
       </div>
 
       <div class="my-control">
         <label>Contact</label>
-        <input type="text" />
+        <input type="text" id="txtContact"/>
       </div>
 
       <div class="my-control">
         <label>Participants</label>
-        <input type="number" />
+        <input type="number" id="txtParticipants"/>
       </div>
 
       <div class="my-control">
         <label>Color</label>
-        <input type="color" />
+        <input type="color" id="selColor"/>
       </div>
       <div class="centered">
         <button id="btnSave" class="btn btn-dark">Save Task</button>

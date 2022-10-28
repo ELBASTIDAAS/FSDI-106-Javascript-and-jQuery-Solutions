@@ -27,7 +27,13 @@ function toggleForm() {
     }
 }
 function saveTask() {
-    console.log("Saving...");
+    let tittle = $("#txtTittle").val();
+    let description = $("#txtDescription").val();
+    let priority = $("#selPriority").val();
+    let dueDate = $("#selDueDate").val();
+    let contact = $("#txtContact").val();
+    let participants = $("#txtParticipants").val();
+    let color = $("#selColor").val();
 }
 
 function init() {
