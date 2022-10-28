@@ -26,6 +26,15 @@ function toggleForm() {
         isVisible = true;
     }
 }
+function clearForm(){
+    $("#txtTittle").val("");
+    $("#txtDescription").val("");
+    $("#selPriority").val("");
+    $("#selDueDate").val("");
+    $("#txtContact").val("");
+    $("#txtParticipants").val("");
+    $("#selColor").val("");
+}
 function saveTask() {
     let tittle = $("#txtTittle").val();
     let description = $("#txtDescription").val();
@@ -38,6 +47,7 @@ function saveTask() {
     let task = new Task(isImportant, tittle, description, priority, dueDate, contact, participants, color);
     console.log(task);
     display(task);
+    clearForm();
 }
 
 function display(task) {
