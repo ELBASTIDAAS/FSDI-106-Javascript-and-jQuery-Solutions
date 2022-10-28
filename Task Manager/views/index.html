@@ -20,16 +20,25 @@
     <section class="list">
       <h3>Pending Task</h3>
       <button class="btn btn-dark" id="btnHideForm">Show/Hide form</button>
+
+      <div id="task-list">
+        <!-- js to render task here-->
+        
+      </div>
     </section>
-    <!--  -->
+
     <section class="form">
       <h3>Task Info</h3>
 
       <!-- <i class="icon fas fa-bolt"></i> -->
-      <i class="icon far fa-star" id="iImportant"></i>
+        
+        <div class="my-control">
+          <label>Important:</label>
+          <i class="icon far fa-star" id="iImportant"></i>
+        </div>
       <div class="my-control">
         <label>Tittle</label>
-        <input type="text" id="txtTittle"/>
+        <input type="text" id="txtTittle" />
       </div>
 
       <div class="my-control">
@@ -50,22 +59,22 @@
 
       <div class="my-control">
         <label>Due Date</label>
-        <input type="datetime-local" id="selDueDate"/>
+        <input type="datetime-local" id="selDueDate" />
       </div>
 
       <div class="my-control">
         <label>Contact</label>
-        <input type="text" id="txtContact"/>
+        <input type="text" id="txtContact" />
       </div>
 
       <div class="my-control">
         <label>Participants</label>
-        <input type="number" id="txtParticipants"/>
+        <input type="number" id="txtParticipants" />
       </div>
 
       <div class="my-control">
         <label>Color</label>
-        <input type="color" id="selColor"/>
+        <input type="color" id="selColor" />
       </div>
       <div class="centered">
         <button id="btnSave" class="btn btn-dark">Save Task</button>
@@ -75,6 +84,7 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/Task Manager/javascript/task.js"></script>
   <script src="/Task Manager/javascript/app.js"></script>
 </body>
 

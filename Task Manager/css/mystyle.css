@@ -15,9 +15,6 @@ h1 {
 
 .parent {
     display: flex;
-    background-image: url();
-    background-repeat: no-repeat;
-    background-size: cover;
 
 }
 
@@ -25,9 +22,18 @@ h1 {
     flex: 3;
 }
 
+.list h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
 .form {
     flex: 1;
-    background: #f2f2f2;
+}
+
+.form h3 {
+    text-align: center;
+    margin-top: 10px;
 }
 
 .my-control {
@@ -47,6 +53,7 @@ h1 {
 .my-control select,
 .my-control textarea {
     flex-grow: 1;
+    padding: 3px 5px;
 }
 
 .centered {
@@ -57,8 +64,40 @@ h1 {
     font-size: 35px;
     color: black;
     cursor: pointer;
+
 }
 
 .fas {
     color: rgb(235, 235, 86);
+}
+
+#task-list {
+    padding: 15px 30px;
+    margin-top: 10px;
+}
+
+.task {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 7px 10px;
+    margin-bottom: 10px;
+    display: flex;
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(94, 94, 94);
+}
+
+.task label {
+    display: block;
+}
+
+.task .head {
+    flex: 3;
+}
+
+.task .middle {
+    flex: 1;
+}
+
+.task .tail {
+    flex: 1;
 }
