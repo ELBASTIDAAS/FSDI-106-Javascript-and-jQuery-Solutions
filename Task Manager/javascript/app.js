@@ -26,14 +26,14 @@ function toggleForm() {
         isVisible = true;
     }
 }
-function clearForm(){
+function clearForm() {
     $("#txtTittle").val("");
     $("#txtDescription").val("");
     $("#selPriority").val("");
     $("#selDueDate").val("");
     $("#txtContact").val("");
     $("#txtParticipants").val("");
-    $("#selColor").val("");
+    $("#selColor").val("000000");
 }
 function saveTask() {
     let tittle = $("#txtTittle").val();
@@ -45,6 +45,21 @@ function saveTask() {
     let color = $("#selColor").val();
 
     let task = new Task(isImportant, tittle, description, priority, dueDate, contact, participants, color);
+
+    $.ajax({
+        url: "http://fsdi.azurewebsites.net/api/tasks",
+        type: "POST",
+        data: JSON.stringify(task),
+        contenType: "application/json",
+        success: function (res) {
+            display(task);
+            clearForm();
+        },
+        error: function (error) {
+            console.log("Error", error);
+        }
+    });
+
     console.log(task);
     display(task);
     clearForm();
@@ -52,7 +67,7 @@ function saveTask() {
 
 function display(task) {
     console.log(task);
-    let syntax = `<div class="task">
+    let syntax = `<div class="task" style ="border:${task.color}">
     <div class="head">
         <h5>${task.tittle}</h5>
         <p>${task.description}</p>
@@ -63,7 +78,7 @@ function display(task) {
         <label>${task.dueDate}</label>
     </div>
 
-    <div class="tail">
+    <div class="tail" style="background-color: ${task.color}">
         <label>${task.contact}</label>
         <label>${task.participants}</label>
     </div>
@@ -71,6 +86,38 @@ function display(task) {
     </div>`;
 
     $("#task-list").append(syntax);
+}
+function testGet() {
+    $.ajax({
+        url: "http://fsdi.azurewebsites.net/",
+        type: "GET",
+        success: function (response) {
+            console.log("Server says", response);
+        },
+        error: function (error) {
+            console.log("Error", error);
+        }
+    });
+}
+
+function fetchTasks() {
+    $.ajax({
+        url: "http://fsdi.azurewebsites.net/api/tasks",
+        type: "GET",
+        success: function (res) {
+            let list = JSON.parse(res);
+            for (let i = 0; i < list.length; i++) {
+                let task = list[i];
+                if (task.developer === "Bastidas") {
+                    display(task);
+                }
+                display(task);
+            }
+        },
+        error: function (details) {
+            console.log(details);
+        }
+    });
 }
 
 function init() {

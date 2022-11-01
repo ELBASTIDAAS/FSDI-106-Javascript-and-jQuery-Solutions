@@ -1,5 +1,5 @@
-class Task{
-    constructor(important,tittle, description, priority, dueDate, contact, participants, color){
+class Task {
+    constructor(important, tittle, description, priority, dueDate, contact, participants, color) {
         this.important = important;
         this.tittle = tittle;
         this.description = description;
@@ -8,9 +8,11 @@ class Task{
         this.contact = contact;
         this.participants = participants;
         this.color = color;
+
+        this.developer = "Bastidas";
     }
 
-    test(){
+    test() {
         console.log("test");
     }
 }
